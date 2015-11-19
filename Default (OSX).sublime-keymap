@@ -10,6 +10,8 @@
   { "keys": ["super+shift+v"], "command": "paste" },
   // ====== Editing
   { "keys": ["super+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+  { "keys": ["super+shift+q"], "command": "close_window" },
+  { "keys": ["super+q"], "command": "close" },
   { "keys": ["super+g"], "command": "join_lines" },
   // vim
   { "keys": ["super+h"], "command": "move", "args": {"by": "characters", "forward": false} },
