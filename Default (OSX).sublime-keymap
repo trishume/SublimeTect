@@ -10,7 +10,13 @@
   { "keys": ["super+shift+v"], "command": "paste" },
   // ====== Editing
   // convenience cmd replications for continuous holding
+  { "keys": ["ctrl+z"], "command": "undo" },
+  { "keys": ["ctrl+shift+z"], "command": "redo" },
   { "keys": ["ctrl+a"], "command": "select_all" },
+  { "keys": ["ctrl+d"], "command": "find_under_expand" },
+  { "keys": ["ctrl+x"], "command": "cut" },
+  { "keys": ["ctrl+c"], "command": "copy" },
+  { "keys": ["ctrl+v"], "command": "paste_and_indent" },
   // misc
   { "keys": ["ctrl+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
   { "keys": ["ctrl+g"], "command": "join_lines" },
@@ -19,6 +25,9 @@
   { "keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
   { "keys": ["ctrl+k"], "command": "move", "args": {"by": "lines", "forward": false} },
   { "keys": ["ctrl+j"], "command": "move", "args": {"by": "lines", "forward": true} },
+  // fast move
+  { "keys": ["ctrl+p"], "command": "scroll_lines", "args": {"amount": 7.0} },
+  { "keys": ["ctrl+."], "command": "scroll_lines", "args": {"amount": -7.0} },
   // extending
   { "keys": ["ctrl+shift+h"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
   { "keys": ["ctrl+shift+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
