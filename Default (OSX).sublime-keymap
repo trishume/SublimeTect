@@ -17,6 +17,9 @@
   { "keys": ["ctrl+x"], "command": "cut" },
   { "keys": ["ctrl+c"], "command": "copy" },
   { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+]"], "command": "indent" },
+  { "keys": ["ctrl+["], "command": "unindent" },
+  { "keys": ["ctrl+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
   // misc
   { "keys": ["ctrl+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
   { "keys": ["ctrl+g"], "command": "join_lines" },
