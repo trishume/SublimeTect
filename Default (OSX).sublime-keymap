@@ -74,4 +74,11 @@
     "keys": ["ctrl+shift+y"],
     "command": "detach_variable",
   },
+  // MultiEditUtils
+  { "keys": ["ctrl+shift+r"], "command": "normalize_region_ends" },
+  { "keys": ["ctrl+shift+,"], "command": "split_selection" },
+  { "keys": ["ctrl+alt+d"], "command": "selection_fields", "args": {"mode": "smart"} },
+  // Selection Ruby evaluate
+  { "keys": ["ctrl+r"], "command": "multi_ruby_eval_replace_sel", "args": { "expr": "eval(x)" } },
+  { "keys": ["ctrl+alt+r"], "command": "multi_ruby_eval" },
 ]
