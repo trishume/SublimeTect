@@ -1,7 +1,6 @@
 [
   // files and symbols
   { "keys": ["super+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-  { "keys": ["super+shift+t"], "command": "goto_definition"},
   { "keys": ["super+alt+r"], "command": "goto_definition" },
   { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
   { "keys": ["super+shift+t"], "command": "related_files"},
@@ -23,6 +22,7 @@
   // misc
   { "keys": ["ctrl+o"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
   { "keys": ["ctrl+g"], "command": "join_lines" },
+  { "keys": ["ctrl+i"], "command": "reindent" },
   // vim
   { "keys": ["ctrl+h"], "command": "move", "args": {"by": "characters", "forward": false} },
   { "keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
@@ -31,13 +31,23 @@
   // fast move
   { "keys": ["ctrl+p"], "command": "scroll_lines", "args": {"amount": 7.0} },
   { "keys": ["ctrl+."], "command": "scroll_lines", "args": {"amount": -7.0} },
+  // drag lines
+  { "keys": ["ctrl+super+k"], "command": "swap_line_up" },
+  { "keys": ["ctrl+super+j"], "command": "swap_line_down" },
+  // jumping
+  // { "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} }, // (this is actually a default)
+  // { "keys": ["ctrl+i"], "command": "move_to", "args": {"to": "indentation"} }, // doesn't work
+  // { "keys": ["ctrl+s"], "command": "move_to", "args": {"to": "scope"} }, // doesn't work
   // extending
   { "keys": ["ctrl+shift+h"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
   { "keys": ["ctrl+shift+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
   { "keys": ["ctrl+shift+k"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
   { "keys": ["ctrl+shift+j"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
-  //
+  // fancy extend
   { "keys": ["ctrl+shift+o"], "command": "expand_selection", "args": {"to": "line"} },
+  { "keys": ["ctrl+shift+i"], "command": "expand_selection", "args": {"to": "indentation"} },
+  { "keys": ["ctrl+shift+s"], "command": "expand_selection", "args": {"to": "scope"} },
+  // { "keys": ["ctrl+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} }, // (this is actually a default)
   // words
   { "keys": ["ctrl+b"], "command": "move", "args": {"by": "words", "forward": false} },
   { "keys": ["ctrl+w"], "command": "move", "args": {"by": "words", "forward": true} },
@@ -50,4 +60,18 @@
   // { "keys": ["super+shift+w"], "command": "move", "args": {"by": "subwords", "forward": true} },
   // { "keys": ["ctrl+shift+b"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
   // { "keys": ["ctrl+shift+w"], "command": "move", "args": {"by": "subwords", "forward": true, "extend": true} },
+
+  // ====== Integration with other plugins
+  // sublime-local-variable
+  {
+    "keys": ["ctrl+y"],
+    "command": "run_macro_file",
+    "args": {
+      "file": "res://Packages/LocalVariable/macro/extract_variable.sublime-macro"
+    },
+  },
+  {
+    "keys": ["ctrl+shift+y"],
+    "command": "detach_variable",
+  },
 ]
