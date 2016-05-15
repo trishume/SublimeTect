@@ -35,6 +35,10 @@
   { "keys": ["ctrl+super+k"], "command": "swap_line_up" },
   { "keys": ["ctrl+super+j"], "command": "swap_line_down" },
   // jumping
+  { "keys": ["ctrl+f"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+  { "keys": ["ctrl+shift+f"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+  { "keys": ["ctrl+s"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+  { "keys": ["ctrl+shift+s"], "command": "move_to", "args": {"to": "bol", "extend": true} },
   // { "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} }, // (this is actually a default)
   // { "keys": ["ctrl+i"], "command": "move_to", "args": {"to": "indentation"} }, // doesn't work
   // { "keys": ["ctrl+s"], "command": "move_to", "args": {"to": "scope"} }, // doesn't work
