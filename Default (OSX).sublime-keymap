@@ -16,6 +16,9 @@
   { "keys": ["ctrl+x"], "command": "cut" },
   { "keys": ["ctrl+c"], "command": "copy" },
   { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+shift+x"], "command": "cut" },
+  { "keys": ["ctrl+shift+c"], "command": "copy" },
+  { "keys": ["ctrl+shift+v"], "command": "paste_and_indent" },
   { "keys": ["ctrl+]"], "command": "indent" },
   { "keys": ["ctrl+["], "command": "unindent" },
   { "keys": ["ctrl+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
@@ -24,8 +27,8 @@
   { "keys": ["ctrl+g"], "command": "join_lines" },
   { "keys": ["ctrl+i"], "command": "reindent" },
   { "keys": ["ctrl+alt+v"], "command": "paste_from_history" },
-  { "keys": ["ctrl+n"], "command": "new_pane" },
-  { "keys": ["ctrl+n"], "command": "close_pane" },
+  { "keys": ["alt+n"], "command": "new_pane" },
+  { "keys": ["ctrl+alt+n"], "command": "close_pane" },
   // vim
   { "keys": ["ctrl+h"], "command": "move", "args": {"by": "characters", "forward": false} },
   { "keys": ["ctrl+l"], "command": "move", "args": {"by": "characters", "forward": true} },
@@ -50,8 +53,10 @@
   // extending
   { "keys": ["ctrl+shift+h"], "command": "move", "args": {"by": "characters", "forward": false, "extend": true} },
   { "keys": ["ctrl+shift+l"], "command": "move", "args": {"by": "characters", "forward": true, "extend": true} },
-  { "keys": ["ctrl+shift+k"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
-  { "keys": ["ctrl+shift+j"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
+  { "keys": ["ctrl+shift+k"], "command": "select_line", "args": {"forward": false} },
+  { "keys": ["ctrl+shift+j"], "command": "select_line", "args": {"forward": true} },
+  { "keys": ["ctrl+shift+super+k"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
+  { "keys": ["ctrl+shift+super+j"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
   // fancy extend
   { "keys": ["ctrl+shift+o"], "command": "expand_selection", "args": {"to": "line"} },
   { "keys": ["ctrl+shift+i"], "command": "expand_selection", "args": {"to": "indentation"} },
