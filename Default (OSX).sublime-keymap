@@ -5,8 +5,11 @@
   { "keys": ["super+shift+r"], "command": "goto_symbol_in_project" },
   { "keys": ["super+shift+t"], "command": "related_files"},
   // paste and indent
-  { "keys": ["super+v"], "command": "paste_and_indent" },
-  { "keys": ["super+shift+v"], "command": "paste" },
+  // { "keys": ["super+v"], "command": "paste_and_indent" },
+  // { "keys": ["super+shift+v"], "command": "paste" },
+  // ====== Viewing
+  { "keys": ["super+k", "super+b"], "command": "fold_scopes" },
+  { "keys": ["ctrl+,"], "command": "fold_scopes" },
   // ====== Editing
   // convenience cmd replications for continuous holding
   { "keys": ["ctrl+z"], "command": "undo" },
@@ -15,10 +18,10 @@
   { "keys": ["ctrl+d"], "command": "find_under_expand" },
   { "keys": ["ctrl+x"], "command": "cut" },
   { "keys": ["ctrl+c"], "command": "copy" },
-  { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+v"], "command": "paste" },
   { "keys": ["ctrl+shift+x"], "command": "cut" },
   { "keys": ["ctrl+shift+c"], "command": "copy" },
-  { "keys": ["ctrl+shift+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+shift+v"], "command": "paste" },
   { "keys": ["ctrl+]"], "command": "indent" },
   { "keys": ["ctrl+["], "command": "unindent" },
   { "keys": ["ctrl+forward_slash"], "command": "toggle_comment", "args": { "block": false } },

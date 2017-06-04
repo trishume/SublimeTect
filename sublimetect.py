@@ -33,3 +33,12 @@ class SelectLineCommand(sublime_plugin.TextCommand):
         cmd_args = {'by': 'lines', 'forward': args['forward'], 'extend': True}
 
         self.view.run_command(cmd, cmd_args)
+
+class FoldScopesCommand(sublime_plugin.TextCommand):
+    def run(self, edit, **args):
+        selector = args.get('selector') or 'meta.function meta.block'
+        folds = self.view.find_by_selector(selector)
+        # print("folding " + len(folds))
+        did_fold = self.view.fold(folds)
+        if not did_fold: # already folded, toggle off
+            self.view.unfold(folds)
