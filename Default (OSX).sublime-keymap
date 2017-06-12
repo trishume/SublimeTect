@@ -8,8 +8,8 @@
   // { "keys": ["super+v"], "command": "paste_and_indent" },
   // { "keys": ["super+shift+v"], "command": "paste" },
   // ====== Viewing
-  { "keys": ["super+k", "super+b"], "command": "fold_scopes" },
-  { "keys": ["ctrl+,"], "command": "fold_scopes" },
+  { "keys": ["super+k", "super+b"], "command": "fold_functions" },
+  { "keys": ["ctrl+,"], "command": "fold_functions" },
   // ====== Editing
   // convenience cmd replications for continuous holding
   { "keys": ["ctrl+z"], "command": "undo" },
