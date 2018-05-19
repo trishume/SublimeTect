@@ -108,3 +108,46 @@ class FoldFunctionsCommand(sublime_plugin.TextCommand):
         did_fold = self.view.fold(folds)
         if not did_fold: # already folded, toggle off
             self.view.unfold(folds)
+
+class AutoMaxPaneCommand(sublime_plugin.WindowCommand):
+    """Toggles pane maximization based on view size."""
+    def run(self):
+        view = self.window.active_view()
+        if view is None:
+            return
+
+        width = self.get_window_width()
+        self.set_maximized(width < 980.0)
+
+    def get_window_width(self):
+        """The only way I can figure out to get the width of the window."""
+        max_right_edge = 0.0
+        for i in range(self.window.num_groups()):
+            v = self.window.active_view_in_group(i)
+            ex, ey = v.viewport_extent()
+            if ex == 0.0:
+                continue
+            lx, ly = v.window_to_layout((0,0))
+            px, py = v.viewport_position()
+            ox = -(lx - px)
+            right_edge = ox + ex
+
+            # re2, _ = v.layout_to_window((ex+px-0.1,py+0.1))
+            # print((right_edge, re2, lx, px, ox, ex))
+            if right_edge > max_right_edge:
+                max_right_edge = right_edge
+
+        return max_right_edge
+
+    def set_maximized(self, maximize):
+        # print("automax: {}".format(maximize))
+        from MaxPane.max_pane import PaneManager, ShareManager
+        w = self.window
+        if maximize:
+            if w.num_groups() > 1 and not PaneManager.isWindowMaximized(w):
+                ShareManager.add(w.id())
+                w.run_command("maximize_pane")
+        elif PaneManager.isWindowMaximized(w):
+            w.run_command("unmaximize_pane")
+            ShareManager.remove(w.id())
+
