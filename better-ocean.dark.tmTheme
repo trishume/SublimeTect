@@ -46,6 +46,9 @@
 				<string>#96b5b4</string>
 				<key>stackGuide</key>
 				<string>#343d46</string>
+				<key>highlight</key>
+				<string>#ebcb8b</string>
+				<!-- <string>#bf616a</string> -->
 			</dict>
 		</dict>
 		<dict>
