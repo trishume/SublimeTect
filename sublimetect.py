@@ -1,5 +1,7 @@
 import sublime, sublime_plugin
 import re
+import urllib.request
+
 
 INDENT_RE = re.compile('^\s*')
 
@@ -151,3 +153,25 @@ class AutoMaxPaneCommand(sublime_plugin.WindowCommand):
             w.run_command("unmaximize_pane")
             ShareManager.remove(w.id())
 
+class SyncCodeCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        file_name = self.view.file_name()
+        if not file_name:
+            return
+        pt = self.view.sel()[0].a
+        row, col = self.view.rowcol(pt)
+
+        req = urllib.request.Request('http://localhost:7143/')
+        req.add_header('x-file', file_name)
+        req.add_header('x-row', str(row))
+        req.add_header('x-col', str(col))
+        with urllib.request.urlopen(req) as f:
+            pass
+
+class GoDownNoCompleteCommand(sublime_plugin.TextCommand):
+    def run(self, edit, **args):
+        if self.view.is_auto_complete_visible():
+            self.view.run_command('hide_auto_complete')
+            sublime.set_timeout(lambda: self.view.run_command('move', {"by":"lines", "forward": True}), 0)
+        else:
+            self.view.run_command('move', {"by":"lines", "forward": True})
