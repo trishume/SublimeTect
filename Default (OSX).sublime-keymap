@@ -22,6 +22,7 @@
   // ====== Viewing
   // { "keys": ["super+k", "super+b"], "command": "fold_functions" },
   { "keys": ["ctrl+,"], "command": "fold_functions" },
+  // { "keys": ["ctrl+,"], "command": "fold_short_stuff" },
   { "keys": ["ctrl+'"], "command": "sync_code" },
   { "keys": ["super+'"], "command": "sync_code" },
   // ====== Editing
